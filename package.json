@@ -1,0 +1,25 @@
+{
+  "name": "react-office-ui-fabric",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Obradovich",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.9.2",
+    "tsd": "^0.6.5",
+    "typescript": "^2.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  }
+}

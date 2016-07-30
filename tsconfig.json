@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "system",
+        "target": "es5",
+        "jsx": "react"
+    },
+    "files": [
+        "./tsx/OfficeUI.tsx"
+    ]
+}

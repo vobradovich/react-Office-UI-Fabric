@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Office UI Fabric Demo</title>
+    <script src="https://fb.me/react-15.3.0.js"></script>
+    <script src="https://fb.me/react-dom-15.3.0.js"></script>
+    <script src=".\node_modules\classnames\index.js"></script>
+    <script src=".\dist\react-office-ui.js"></script>
+    <link rel="stylesheet" href="http://appsforoffice.microsoft.com/fabric/2.2.0/fabric.min.css">
+    <link rel="stylesheet" href="http://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
+</head>
+
+<body>
+
+    <h3>Buttons <code>.mdl-button .mdl-js-button</code></h3>
+    <div style="padding-top: 24px;" id="Button"></div>
+    <div style="padding-top: 24px;" id="ButtonRaised"></div>
+    <div style="padding-top: 24px;" id="ButtonFab"></div>
+
+    <h3>Checkbox <code>.mdl-checkbox</code></h3>
+    <div style="padding-top: 24px;" id="Checkbox"></div>
+
+    <h3>Radio <code>.mdl-radio</code></h3>
+    <div style="padding-top: 24px;" id="Radio"></div>
+
+    <h3>Cards <code>.mdl-card</code></h3>
+    <div style="padding-top: 24px;" id="Card"></div>
+    <div style="padding-top: 24px;" id="Card2"></div>
+
+    <h3>Grid <code>.mdl-grid</code></h3>
+    <div style="padding-top: 24px;" id="Grid"></div>
+
+    <h3>Tabs <code>.mdl-tabs</code></h3>
+    <div style="padding-top: 24px;" id="Tabs"></div>
+
+    <h3>Spinner <code>.mdl-spinner</code></h3>
+    <div style="padding-top: 24px;" id="Spinner"></div>
+
+    <h3>Table <code>.mdl-data-table</code></h3>
+    <div style="padding-top: 24px;" id="Table"></div>
+
+    <h3>Table with React Selection<code>.mdl-data-table</code></h3>
+    <div style="padding-top: 24px;" id="Table2"></div>
+
+    <h3>Menu<code>.mdl-menu</code></h3>
+    <div style="padding-top: 24px;" id="Menu"></div>
+
+    <h3>Text Fields <code>.mdl-textfield</code></h3>
+    <div style="padding-top: 24px;" id="TextField"></div>
+
+
+    <script>
+
+
+     var Button = React.createFactory(OfficeUIButton);
+     var ButtonLabel = React.createFactory(OfficeUIButtonLabel);
+     var ButtonDescription = React.createFactory(OfficeUIButtonDescription);
+     ReactDOM.render(Button({}, ButtonLabel({}, "OfficeUIButton"), ButtonDescription({}, "OfficeUIButtonDescription")), document.getElementById("Button"));
+    
+    var Toggle = React.createFactory(OfficeUIToggle);
+    ReactDOM.render(Toggle({}, "OfficeUIToggle"), document.getElementById("Checkbox"));
+
+    ReactDOM.render(
+        React.createElement("div", {},
+            React.createElement(OfficeUITable, {},
+                React.createElement("thead", {},
+                    React.createElement("tr", {},
+                        React.createElement("th", {}, "Columnn 1"),
+                        React.createElement("th", {}, "Columnn 2"),
+                        React.createElement("th", {}, "Columnn 3")
+                    )
+                ),
+                React.createElement("tbody", {},
+                    React.createElement("tr", {},
+                        React.createElement("td", {}, "Cell 1"),
+                        React.createElement("td", {}, "Cell"),
+                        React.createElement("td", {}, "Cell")
+                    )
+                )
+            )
+        ),
+        document.getElementById("Table")
+    );
+
+    ReactDOM.render(
+        React.createElement("div", {},
+            React.createElement(OfficeUITextField, {}, "TextField"),
+            React.createElement(OfficeUITextField, { type: "multiline" }, "TextField"),
+            React.createElement(OfficeUITextField, { type: "placeholder" }, "TextField"),
+            React.createElement(OfficeUITextField, { type: "underlined" }, "TextField")
+        ),
+        document.getElementById("TextField")
+    );
+
+    ReactDOM.render(
+        React.createElement("div", {},
+            React.createElement(OfficeUISpinner, {})
+        ),
+        document.getElementById("Spinner")
+    );
+
+    ReactDOM.render(
+        React.createElement("div", {},
+            React.createElement(OfficeUICallout, { title: "All of your favorite people", content: "People automatically puts together all of the people you care most about in one place." }),
+            React.createElement(OfficeUICallout, { type: "arrowLeft", title: "All of your favorite people", content: "People automatically puts together all of the people you care most about in one place." }),
+            React.createElement(OfficeUICallout, { type: "OOBE", title: "All of your favorite people", content: "People automatically puts together all of the people you care most about in one place." })
+        ),
+        document.getElementById("Spinner")
+    );
+
+    </script>
+</body>
+
+</html>
