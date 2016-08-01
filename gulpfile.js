@@ -19,15 +19,17 @@ gulp.task("tsx-jsx", function () {
       "jsx": "preserve",
       "module": "es6"
     }));
-  return tsResult.js.pipe(gulp.dest('dist/jsx'));  
+  return tsResult.js.pipe(gulp.dest('dist/jsx'));
 });
 
 // JSX to JS
-gulp.task("tsx-jsx-js", ["tsx-jsx"], function () {  
+gulp.task("tsx-jsx-js", ["tsx-jsx"], function () {
   return gulp.src(["dist/jsx/**/*.jsx"])
     .pipe($.sourcemaps.init())
     .pipe($.concat("react-office-ui-jsx.js"))
-    .pipe(babel({ stage: 0 }))
+    .pipe(babel({
+      "presets": ["es2015", "react"]
+    }))
     .pipe($.sourcemaps.write("."))
     .pipe(gulp.dest("dist"));
 });
@@ -45,7 +47,7 @@ gulp.task("tsx-js", function () {
     }));
   return tsResult.js
     .pipe($.sourcemaps.write("."))
-    .pipe(gulp.dest('dist'));  
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task("build", ["tsx-jsx-js", "tsx-js"], function (c) {
